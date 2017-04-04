@@ -1,3 +1,4 @@
+<div *ngIf="flag!=false">
 <md-card class="card">
     <md-card-title>Welcome to College Selector</md-card-title>
     <md-card-subtitle>Fill out the form to obtain school recommendations tailored to you!</md-card-subtitle>
@@ -59,3 +60,19 @@
         </md-card-actions>
     </form>
 </md-card>
+</div>
+
+<div *ngIf="flag==false">
+    <md-card-title>Recommended Universities</md-card-title>
+    <div style="font-family: Arial">
+    <h4> 
+    <div>1.  {{response.first}}</div><br>
+    <div>2. {{response.second}}</div><br>
+    <div>3. {{response.third}}</div><br>
+    <div>4. {{response.fourth}}</div><br>
+    </h4>
+    </div>
+     <md-card-actions>
+          <button style="float: left;" md-raised-button (click)="flag=true;"  class="btn">Back</button>
+        </md-card-actions>
+</div>

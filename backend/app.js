@@ -21,11 +21,17 @@ var MongoClient = require('mongodb').MongoClient;
 
 
 app.post('/api/formDetails', function (req, res) {
+	var body1={"first":"NCSU","second":"UNC","third":"Gatech","fourth":"UCLA"}
     console.log(req.body);
-	
+	var score=0
+	var name=req.body.major
+	console.log(name)
     MongoClient.connect('mongodb://localhost:27017/mydb', function (err, db) {
-  db.collection('colleges').find({"North(0)/ South(1)": 0}).toArray(function (err, docs) {
+  db.collection('colleges').find().toArray(function (err, docs) {
         docs.forEach(function (doc) {
+			score=0
+			if(doc['public(0) /private(1)']==1)
+				  console.log(doc['schools'])
             
         });
       });
@@ -33,7 +39,7 @@ app.post('/api/formDetails', function (req, res) {
 
 });
 
-    res.status(200).send("Success");
+    res.status(200).send(body1);
 
 });
 
