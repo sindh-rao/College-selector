@@ -1,0 +1,61 @@
+<md-card class="card">
+    <md-card-title>Welcome to College Selector</md-card-title>
+    <md-card-subtitle>Fill out the form to obtain school recommendations tailored to you!</md-card-subtitle>
+
+    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
+
+
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+        <md-input-container>
+          <input mdInput type="text" placeholder="Name..." (ngModel)="name" name="name" class="txt" required>
+        </md-input-container><br>
+        <md-input-container>
+        <input mdInput type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+        </md-input-container><br>
+        <md-input-container>
+        <input mdInput type="text" placeholder="Major..." (ngModel)="major" name="major" class="txt" required>
+        </md-input-container><br>
+
+        <md-select placeholder="Current Location" name="current_location" [(ngModel)]="current_location" required>
+            <md-option *ngFor="let direction of directions" [value]="direction.value">  
+            {{direction.display}}
+            </md-option>
+        </md-select><br><br>
+
+        <md-select placeholder="Desired Location" name="desired_location" [(ngModel)]="desired_location" required>
+            <md-option *ngFor="let direction of directions" [value]="direction.value">  
+            {{direction.display}}
+            </md-option>
+        </md-select><br><br>
+
+        <h5>Rank Categories of Consideration</h5>
+
+        <md-select placeholder="Rank 1" name="rank1" [(ngModel)]="rank1" required>
+            <md-option *ngFor="let category of categories" [value]="category.value">  
+            {{category.display}}
+            </md-option>
+        </md-select><br><br>
+
+        <md-select placeholder="Rank 2" name="rank2" [(ngModel)]="rank2" required>
+            <md-option *ngFor="let category of categories" [value]="category.value">  
+            {{category.display}}
+            </md-option>
+        </md-select><br><br>
+
+        <md-select placeholder="Rank 3" name="rank3" [(ngModel)]="rank3" required>
+            <md-option *ngFor="let category of categories" [value]="category.value">  
+            {{category.display}}
+            </md-option>
+        </md-select><br><br>
+
+        <md-select placeholder="Rank 4" name="rank4" [(ngModel)]="rank4" required>
+            <md-option *ngFor="let category of categories" [value]="category.value">  
+            {{category.display}}
+            </md-option>
+        </md-select><br><br>
+
+        <md-card-actions>
+          <button md-raised-button type="submit" [disabled]="!formData.valid" class="btn">Submit</button>
+        </md-card-actions>
+    </form>
+</md-card>
