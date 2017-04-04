@@ -8,11 +8,13 @@ import { routes } from './app.routes';
 
 import { AppComponent } from './app.component';
 import { FormPageComponent } from './form-page/form-page.component';
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormPageComponent
+    FormPageComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

@@ -41,10 +41,13 @@ export class FormPageComponent implements OnInit {
    this.http.post('http://localhost:3001/api/formDetails',body,{ headers: contentHeaders })
     .subscribe(response=>{
       console.log(response);
+      this.router.navigateByUrl('/results');
      },
     error=>{
       alert(error);
+      this.router.navigateByUrl('/results');
     });
+
   }
 
 }
