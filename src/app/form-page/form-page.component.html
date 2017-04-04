@@ -1,78 +1,96 @@
-<div *ngIf="flag!=false">
 <md-card class="card">
     <md-card-title>Welcome to College Selector</md-card-title>
     <md-card-subtitle>Fill out the form to obtain school recommendations tailored to you!</md-card-subtitle>
 
-    <span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>
-
+    <!--<span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>-->
 
     <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
-        <md-input-container>
-          <input mdInput type="text" placeholder="Name..." (ngModel)="name" name="name" class="txt" required>
-        </md-input-container><br>
-        <md-input-container>
-        <input mdInput type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
-        </md-input-container><br>
-        <md-input-container>
-        <input mdInput type="text" placeholder="Major..." (ngModel)="major" name="major" class="txt" required>
-        </md-input-container><br>
+            <md-input-container>
+            <input mdInput type="text" placeholder="Name..." (ngModel)="name" name="name" class="txt" required>
+            </md-input-container><br>
+            <md-input-container>
+            <input mdInput type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
+            </md-input-container><br>
+            <md-input-container>
+            <input mdInput type="text" placeholder="Major..." (ngModel)="major" name="major" class="txt" required>
+            </md-input-container><br>
 
-        <md-select placeholder="Current Location" name="current_location" [(ngModel)]="current_location" required>
-            <md-option *ngFor="let direction of directions" [value]="direction.value">  
-            {{direction.display}}
-            </md-option>
-        </md-select><br><br>
+            <md-select placeholder="Current Location" name="current_location" [(ngModel)]="current_location" required>
+                <md-option *ngFor="let direction of directions" [value]="direction.value">  
+                {{direction.display}}
+                </md-option>
+            </md-select><br><br>
 
-        <md-select placeholder="Desired Location" name="desired_location" [(ngModel)]="desired_location" required>
-            <md-option *ngFor="let direction of directions" [value]="direction.value">  
-            {{direction.display}}
-            </md-option>
-        </md-select><br><br>
+            <md-select placeholder="Desired Location" name="desired_location" [(ngModel)]="desired_location" required>
+                <md-option *ngFor="let direction of directions" [value]="direction.value">  
+                {{direction.display}}
+                </md-option>
+            </md-select><br><br>
 
-        <h5>Rank Categories of Consideration</h5>
+            <md-input-container>
+            <input mdInput type="text" placeholder="State Abbreviation..." (ngModel)="state" name="state" class="txt" required>
+            </md-input-container><br> 
 
-        <md-select placeholder="Rank 1" name="rank1" [(ngModel)]="rank1" required>
-            <md-option *ngFor="let category of categories" [value]="category.value">  
-            {{category.display}}
-            </md-option>
-        </md-select><br><br>
+            <md-input-container>
+            <input mdInput type="text" placeholder="In-state Tuition Min..." (ngModel)="inMin" name="inMin" class="txt" required>
+            </md-input-container> 
+            to
+            <md-input-container>
+            <input mdInput type="text" placeholder="In-state Tuition Max..." (ngModel)="inMax" name="inMax" class="txt" required>
+            </md-input-container> <br><br>
 
-        <md-select placeholder="Rank 2" name="rank2" [(ngModel)]="rank2" required>
-            <md-option *ngFor="let category of categories" [value]="category.value">  
-            {{category.display}}
-            </md-option>
-        </md-select><br><br>
+            <md-input-container>
+            <input mdInput type="text" placeholder="Out-of-state Tuition Min..." (ngModel)="outMin" name="outMin" class="txt" required>
+            </md-input-container> 
+            to
+            <md-input-container>
+            <input mdInput type="text" placeholder="Out-of-state Tuition Max..." (ngModel)="outMax" name="outMax" class="txt" required>
+            </md-input-container><br><br>
 
-        <md-select placeholder="Rank 3" name="rank3" [(ngModel)]="rank3" required>
-            <md-option *ngFor="let category of categories" [value]="category.value">  
-            {{category.display}}
-            </md-option>
-        </md-select><br><br>
+            <md-input-container>
+            <input mdInput type="text" placeholder="Min Acceptance Rate..." (ngModel)="accRate" name="accRate" class="txt" required>
+            </md-input-container><br><br>
 
-        <md-select placeholder="Rank 4" name="rank4" [(ngModel)]="rank4" required>
-            <md-option *ngFor="let category of categories" [value]="category.value">  
-            {{category.display}}
-            </md-option>
-        </md-select><br><br>
+            <p>Would you prefer a public or private school?</p>
+            <md-radio-group ng-model="public_private">
+                <md-radio-button value="0" class="md-primary">Public</md-radio-button>
+                <md-radio-button value="1"> Private </md-radio-button>
+            </md-radio-group><br><br>
+
+            <p>Do you like college sports?</p>
+            <md-radio-group ng-model="sports">
+                <md-radio-button value="1"> Yes </md-radio-button>
+                <md-radio-button value="0" class="md-primary">No</md-radio-button>
+            </md-radio-group><br><br>        
+
+            <h5>Rank Categories of Consideration</h5>
+
+            <md-select placeholder="Rank 1" name="rank1" [(ngModel)]="rank1" required>
+                <md-option *ngFor="let category of categories" [value]="category.value">  
+                {{category.display}}
+                </md-option>
+            </md-select><br><br>
+
+            <md-select placeholder="Rank 2" name="rank2" [(ngModel)]="rank2" required>
+                <md-option *ngFor="let category of categories" [value]="category.value">  
+                {{category.display}}
+                </md-option>
+            </md-select><br><br>
+
+            <md-select placeholder="Rank 3" name="rank3" [(ngModel)]="rank3" required>
+                <md-option *ngFor="let category of categories" [value]="category.value">  
+                {{category.display}}
+                </md-option>
+            </md-select><br><br>
+
+            <md-select placeholder="Rank 4" name="rank4" [(ngModel)]="rank4" required>
+                <md-option *ngFor="let category of categories" [value]="category.value">  
+                {{category.display}}
+                </md-option>
+            </md-select><br><br>
 
         <md-card-actions>
           <button md-raised-button type="submit" [disabled]="!formData.valid" class="btn">Submit</button>
         </md-card-actions>
     </form>
 </md-card>
-</div>
-
-<div *ngIf="flag==false">
-    <md-card-title>Recommended Universities</md-card-title>
-    <div style="font-family: Arial">
-    <h4> 
-    <div>1.  {{response.first}}</div><br>
-    <div>2. {{response.second}}</div><br>
-    <div>3. {{response.third}}</div><br>
-    <div>4. {{response.fourth}}</div><br>
-    </h4>
-    </div>
-     <md-card-actions>
-          <button style="float: left;" md-raised-button (click)="flag=true;"  class="btn">Back</button>
-        </md-card-actions>
-</div>
