@@ -1,10 +1,10 @@
+
 <md-card class="card">
     <md-card-title>Welcome to College Selector</md-card-title>
     <md-card-subtitle>Fill out the form to obtain school recommendations tailored to you!</md-card-subtitle>
 
-    <!--<span class="error" *ngIf="error" [@fallIn]='state'>{{ error }}</span>-->
-
-    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)">
+    <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="content">
+            <md-card-content style="overflow-y: auto; height: 575px" flex>
             <md-input-container>
             <input mdInput type="text" placeholder="Name..." (ngModel)="name" name="name" class="txt" required>
             </md-input-container><br>
@@ -88,9 +88,11 @@
                 {{category.display}}
                 </md-option>
             </md-select><br><br>
+            </md-card-content>
 
         <md-card-actions>
           <button md-raised-button type="submit" [disabled]="!formData.valid" class="btn">Submit</button>
         </md-card-actions>
     </form>
+
 </md-card>

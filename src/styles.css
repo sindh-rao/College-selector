@@ -2,6 +2,8 @@
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~https://fonts.googleapis.com/icon?family=Roboto';
 @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/0.6.15/css/perfect-scrollbar.min.css';
+
 
 body {
     font-family: Roboto;
@@ -10,6 +12,7 @@ body {
 .card {
     margin: auto;
     width: 50%; 
+    height: 700px;
 }
 
 .btn {
