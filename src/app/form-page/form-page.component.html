@@ -40,13 +40,13 @@
             </md-input-container><br><br>
 
             <p>Would you prefer a public or private school?</p>
-            <md-radio-group ng-model="public_private">
+            <md-radio-group (ng-model)="public_private" name="public_private">
                 <md-radio-button value="0" class="md-primary">Public</md-radio-button>
                 <md-radio-button value="1"> Private </md-radio-button>
             </md-radio-group><br><br>
 
             <p>Do you like college sports?</p>
-            <md-radio-group ng-model="sports">
+            <md-radio-group (ng-model)="sports" name="sports">
                 <md-radio-button value="1"> Yes </md-radio-button>
                 <md-radio-button value="0" class="md-primary">No</md-radio-button>
             </md-radio-group><br><br>        
