@@ -23,10 +23,14 @@ export class FormPageComponent implements OnInit {
   ];
 
   public categories = [
-    { value: 'academic', display: 'Academic Reputation'},
-    { value: 'social', display: 'Social / Lifestyle'},
-    { value: 'aesthetics', display: 'Aesthetics'},
-    { value: 'finance', display: 'Financial Limitations'}
+    { value: 'major', display: 'Major'},
+    { value: 'desired_location', display: 'Desired Location'},
+    { value: 'state', display: 'State'},
+    { value: 'accRate', display: 'Acceptance Rate'},
+    { value: 'public_private', display: 'Public or Private'},
+    { value: 'sports', display: 'College Sports'},
+    { value: 'outMax', display: 'Out of State Tuition'},
+    { value: 'inMax', display: 'In State Tuition'}
   ];
 
 //Added http instance
