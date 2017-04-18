@@ -1,11 +1,23 @@
 <md-card class="card">
   <md-card-title>Recommended Universities</md-card-title>
-      <ul>
-        <li *ngFor="let result of results">  
-          {{result.display}}
-        </li>
-      </ul>
-     <!--<md-card-actions>
-          <button md-raised-button style="float: left;" (click)="flag=true;"  class="btn">Back</button>
-     </md-card-actions>-->
+      <table>
+        <tr>
+          <th>School</th>
+          <th>Public/Private</th>
+          <th>Acceptance Rate</th>
+          <th>Major Available</th>
+          <th>Sports</th>
+          <th>State</th>
+          <th>Tuition</th>
+        </tr>
+        <tr *ngFor="let result of results">
+          <td>{{result.school}}</td>
+          <td>{{result.publicPrivate}}</td>
+          <td>{{result.acceptanceRate}}</td>
+          <td>{{result.majorAvailable}}</td>
+          <td>{{result.hasSports}}</td>
+          <td>{{result.state}}</td>
+          <td>${{result.tuition}}</td>
+        </tr>
+      </table>
 </md-card>

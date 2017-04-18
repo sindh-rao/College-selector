@@ -6,20 +6,8 @@
     <form #formData='ngForm' (ngSubmit)="onSubmit(formData)" class="content">
             <md-card-content style="overflow-y: auto; height: 575px" flex>
             <md-input-container>
-            <input mdInput type="text" placeholder="Name..." (ngModel)="name" name="name" class="txt" required>
-            </md-input-container><br>
-            <md-input-container>
-            <input mdInput type="text" placeholder="Email address.." (ngModel)="email" name="email" class="txt" required>
-            </md-input-container><br>
-            <md-input-container>
             <input mdInput type="text" placeholder="Major..." (ngModel)="major" name="major" class="txt" required>
             </md-input-container><br>
-
-            <md-select placeholder="Current Location" name="current_location" [(ngModel)]="current_location" required>
-                <md-option *ngFor="let direction of directions" [value]="direction.value">  
-                {{direction.display}}
-                </md-option>
-            </md-select><br><br>
 
             <md-select placeholder="Desired Location" name="desired_location" [(ngModel)]="desired_location" required>
                 <md-option *ngFor="let direction of directions" [value]="direction.value">  
