@@ -24,7 +24,7 @@ export class FormPageComponent implements OnInit {
 
   public categories = [
     { value: 'major', display: 'Major'},
-    { value: 'desired_location', display: 'Desired Location'},
+    { value: 'location', display: 'Desired Location'},
     { value: 'state', display: 'State'},
     { value: 'accRate', display: 'Acceptance Rate'},
     { value: 'public_private', display: 'Public or Private'},
