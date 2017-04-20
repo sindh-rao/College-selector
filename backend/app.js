@@ -34,11 +34,11 @@ app.post('/api/formDetails', function (req, res) {
 			score=0
 			instate=false;
 			var ranks=[req.body.rank3,req.body.rank2,req.body.rank1];
-			/*
-			if(doc['public(0) /private(1)']==){
-				  score+=2+ranks.indexOf("public/private");
+			
+			if(doc['public(0) /private(1)']==req.body.public_private){
+				  score+=2+ranks.indexOf("public_private");
 				  }
-			*/
+			
             if(doc['State']==req.body.state)
 				  instate=true;
             if(doc['Acceptance rate']>req.body.accRate){
@@ -55,26 +55,29 @@ app.post('/api/formDetails', function (req, res) {
 				  }
 			score+=(doc['review nalysis score']	/100)+doc['Youtube 2016-till now reviews'];
 			
-			/*
-            if(doc['In power five no(0)/ yes(1)']==){
+			
+            if(doc['In power five no(0)/ yes(1)']== req.body.sports){
 				  score+=2+ranks.indexOf("sports");
 				  }
-			if(doc['major'].indexOf(req.body.major)>=0){
-				  score+=2+ranks.indexOf("major");
-				  }
-			  */
+			// if(doc['major'].indexOf(req.body.major)>=0){
+			// 	  score+=2+ranks.indexOf("major");
+			// 	  }
+			  
 			  s2.push(score, doc['Schools']);
 			console.log(doc['Schools']+" "+score);
 			score_array.push([score,doc]);
 			
                      
         });
-		score_array=score_array.sort(function(a,b){return a[0]<b[0];});
-		//console.log(score_array);
-		s2.sort(function(a,b){return a[0]<b[0];});
-		console.log(s2);
-		var s3=[[1,"p"],[25,"q"],[3,"a"]];
-		console.log(s3.sort(function(a,b){return a[0]<b[0];}));
+		console.log(score_array);
+		score_array=score_array.sort(function(a,b){return b[0] - a[0];});
+		console.log("\n------------------------------\n");
+		console.log(score_array);
+		body1 = [];
+		for(var i = 0; i < 4; i++) {
+			body1.push(score_array[i][1]);
+		}
+		console.log(body1);
 
       });1
               db.close();
