@@ -1,0 +1,26 @@
+Schools,Public(0) /Private(1),State,In-State Tuition,Out-of-state Tuition,Acceptance rate,Location (0=NE 1=NW 2=SE 3=SW 4=C),review nalysis score,In power five no(0)/ yes(1),Youtube 2016-till now reviews,North(0)/ South(1),East(0)/ West(1),Central
+"University of Washington, Seattle",0,WA,10753,34791,53,1,78,1,0.124,0,1,
+Harvard,1,MA,"43,280","43,280",5.4,0,95,0,0.112,0,0,
+North western University,1,IL,49047,49047,13,1,96,1,0.2589,0,1,
+Georgia tech.,0,GA,12204,49047,32.2,2,90,1,0.1537,1,0,
+UCLA,0,CA,32583,60597,18,3,89,1,0.162,1,1,
+Arizona State University,0,AZ,25864,41694,83,3,66,1,0.098,1,1,
+Stanford University,1,CA,62363,62363,4.8,3,97,1,0.202,1,1,
+CSU LA,0,CA,24476,33404,68,3,45,0,0.0199,1,1,
+University of New Mexico,0,NM,21360,36346,45,3,53,0,0.075,1,1,
+Purdue University,0,IN,10002,28804,59,0,76,1,0.1009,0,0,
+University of Texas at Austin,0,TX,11060,39270,39,4,93,1,0.1923,,,1
+Colorado College,1,CO,46410,48996,15.8,4,77,0,0.078,,,1
+University of Chicago,1,IL,50997,50997,7.6,4,92,0,0.1643,,,1
+"University of Minnesota, Twin Cities",0,MN,13840,22260,45,4,82,1,0.2136,,,1
+University of Notre Dame,1,IN,49685,49685,18.7,4,90,1,0.1267,,,1
+Penn State,0,PA,17900,32382,51,0,87,1,0.1236,0,0,
+NYU,1,NY,46170,46170,33,0,79,0,0.105,0,0,
+MIT,1,MA,49580,49580,7.9,0,97,0,0.139,0,0,
+Michigan State University ,0,MI,14880,37890,65.7,0,74,1,0.1124,0,0,
+Rutgers,0,NJ,10954,25732,58,0,76,1,0.098,0,0,
+North Carolina State Univeristy,0,NC,8296,23551,51.6,2,70,1,0.0511,1,0,
+University of Miami,1,FL,44350,44350,38.2,2,74,1,0.045,1,0,
+Coastal Carolina University,0,SC,10320,23660,63.6,2,66,0,0.0119,1,0,
+University of Alabama,0,AL,9826,24950,51,2,42,1,0.086,1,0,
+Vanderbilt University,1,TN,43838,43838,13.1,2,78,1,0.0234,1,0,
