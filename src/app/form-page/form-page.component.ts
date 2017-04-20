@@ -29,8 +29,7 @@ export class FormPageComponent implements OnInit {
     { value: 'accRate', display: 'Acceptance Rate'},
     { value: 'public_private', display: 'Public or Private'},
     { value: 'sports', display: 'College Sports'},
-    { value: 'outMax', display: 'Out of State Tuition'},
-    { value: 'inMax', display: 'In State Tuition'}
+    { value: 'tuition', display: 'Tuition'},
   ];
 
 //Added http instance
