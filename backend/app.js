@@ -1,4 +1,4 @@
-    var express = require('express'); 
+var express = require('express'); 
     var app = express(); 
     var bodyParser = require('body-parser');
     var mongodb = require('mongodb');
@@ -25,16 +25,58 @@ app.post('/api/formDetails', function (req, res) {
     console.log(req.body);
 	var score=0
 	var name=req.body.major
+	var score_array = [];
+	var s2=[];
 	console.log(name)
     MongoClient.connect('mongodb://localhost:27017/mydb', function (err, db) {
-  db.collection('colleges').find().toArray(function (err, docs) {
+  db.collection('collegesfinal').find().toArray(function (err, docs) {
         docs.forEach(function (doc) {
 			score=0
-			if(doc['public(0) /private(1)']==1)
-				  console.log(doc['schools'])
-            
+			instate=false;
+			var ranks=[req.body.rank3,req.body.rank2,req.body.rank1];
+			/*
+			if(doc['public(0) /private(1)']==){
+				  score+=2+ranks.indexOf("public/private");
+				  }
+			*/
+            if(doc['State']==req.body.state)
+				  instate=true;
+            if(doc['Acceptance rate']>req.body.accRate){
+				  score+=2+ranks.indexOf("accRate");
+				  }
+            if(doc['Location (0=NE 1=NW 2=SE 3=SW 4=C)']==req.body.desired_location){
+				  score+=2+ranks.indexOf("location");
+				  }
+            if(instate && doc['In-State Tuition']<req.body.inMax){
+				  score+=2+ranks.indexOf("tuition");
+				  }
+			else if(!instate && doc['Out-of-state Tuition']<req.body.outMax){
+				  score+=2+ranks.indexOf("tuition");
+				  }
+			score+=(doc['review nalysis score']	/100)+doc['Youtube 2016-till now reviews'];
+			
+			/*
+            if(doc['In power five no(0)/ yes(1)']==){
+				  score+=2+ranks.indexOf("sports");
+				  }
+			if(doc['major'].indexOf(req.body.major)>=0){
+				  score+=2+ranks.indexOf("major");
+				  }
+			  */
+			  s2.push(score, doc['Schools']);
+			console.log(doc['Schools']+" "+score);
+			score_array.push([score,doc]);
+			
+                     
         });
-      });
+		score_array=score_array.sort(function(a,b){return a[0]<b[0];});
+		//console.log(score_array);
+		s2.sort(function(a,b){return a[0]<b[0];});
+		console.log(s2);
+		var s3=[[1,"p"],[25,"q"],[3,"a"]];
+		console.log(s3.sort(function(a,b){return a[0]<b[0];}));
+
+      });1
               db.close();
 
 });
