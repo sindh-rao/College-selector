@@ -5,19 +5,19 @@
           <th>School</th>
           <th>Public/Private</th>
           <th>Acceptance Rate</th>
-          <th>Major Available</th>
+          <!--<th>Major Available</th>-->
           <th>Sports</th>
           <th>State</th>
           <th>Tuition</th>
         </tr>
         <tr *ngFor="let result of results">
-          <td>{{result.school}}</td>
-          <td>{{result.publicPrivate}}</td>
-          <td>{{result.acceptanceRate}}</td>
-          <td>{{result.majorAvailable}}</td>
-          <td>{{result.hasSports}}</td>
-          <td>{{result.state}}</td>
-          <td>${{result.tuition}}</td>
+          <td>{{result.Schools}}</td>
+          <td>{{result['Public(0) \/Private(1)']}}</td>
+          <td>{{result['Acceptance rate']}}</td>
+          <!--<td>{{result.majorAvailable}}</td>-->
+          <td>{{result['In power five no(0)\/ yes(1)']}}</td>
+          <td>{{result.State}}</td>
+          <td>${{result['Out-of-state Tuition']}}</td>
         </tr>
       </table>
 </md-card>
