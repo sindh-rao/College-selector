@@ -13,24 +13,42 @@ import {contentHeaders} from '../headers';
   host: {'[@moveIn]': ''}
 })
 export class ResultsComponent implements OnInit {
-  public results = [
-    // {value: '1', display: 'NCSU'},
-    // {value: '2', display: 'UNCG'},
-    // {value: '3', display: 'UNCW'},
-    // {value: '4', display: 'Duke'},
-  ];
+  public results = [];
 
   constructor(private router: Router,private http: Http) { 
     this.http.get('http://localhost:3001/api/results')
     .subscribe(response=>{
       console.log(response.json());
       this.results = response.json();
+      this.formatResults();
      },
     error=>{
       alert(error);
       //this.router.navigateByUrl('/results');
     });
 
+  }
+
+  formatResults() {
+    this.results.forEach(function(result) {
+      if(result['Public(0) \/Private(1)'] === 0) {
+        result['Public(0) \/Private(1)'] = "Public";
+      } else {
+        result['Public(0) \/Private(1)'] = "Private";
+      }
+
+      if(result['In power five no(0)\/ yes(1)'] === 1) {
+        result['In power five no(0)\/ yes(1)'] = "Yes";
+      } else {
+        result['In power five no(0)\/ yes(1)'] = "No";
+      }
+
+      if(result.instate) {
+        result.tuition = result['In-State Tuition'];
+      } else {
+        result.tuition = result['Out-of-state Tuition'];
+      }
+    });
   }
 
   ngOnInit() {

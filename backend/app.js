@@ -39,7 +39,9 @@ app.post('/api/formDetails', function (req, res) {
 					}
 				
 				if(doc['State']==req.body.state)
-					instate=true;
+					doc.instate=true;
+				else 
+					doc.instate=false;
 				if(doc['Acceptance rate']>req.body.accRate){
 					score+=2+ranks.indexOf("accRate");
 					}

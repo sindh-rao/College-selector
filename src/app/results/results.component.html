@@ -1,5 +1,7 @@
 <md-card class="results-card">
-  <md-card-title>Recommended Universities</md-card-title>
+  <div class="title">
+    <md-card-title>Recommended Universities</md-card-title>
+  </div>
       <table>
         <tr>
           <th>School</th>
@@ -13,11 +15,11 @@
         <tr *ngFor="let result of results">
           <td>{{result.Schools}}</td>
           <td>{{result['Public(0) \/Private(1)']}}</td>
-          <td>{{result['Acceptance rate']}}</td>
+          <td>{{result['Acceptance rate']}}%</td>
           <!--<td>{{result.majorAvailable}}</td>-->
           <td>{{result['In power five no(0)\/ yes(1)']}}</td>
           <td>{{result.State}}</td>
-          <td>${{result['Out-of-state Tuition']}}</td>
+          <td>${{result.tuition}}</td>
         </tr>
       </table>
 </md-card>
