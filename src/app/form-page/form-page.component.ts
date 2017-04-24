@@ -23,7 +23,7 @@ export class FormPageComponent implements OnInit {
   ];
 
   public categories = [
-    { value: 'major', display: 'Major'},
+    // { value: 'major', display: 'Major'},
     { value: 'location', display: 'Desired Location'},
     { value: 'state', display: 'State'},
     { value: 'accRate', display: 'Acceptance Rate'},
