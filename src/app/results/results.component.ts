@@ -16,6 +16,7 @@ export class ResultsComponent implements OnInit {
   public results = [];
 
   constructor(private router: Router,private http: Http) { 
+    this.wait(1000);
     this.http.get('http://localhost:3001/api/results')
     .subscribe(response=>{
       console.log(response.json());
@@ -26,8 +27,15 @@ export class ResultsComponent implements OnInit {
       alert(error);
       //this.router.navigateByUrl('/results');
     });
-
   }
+
+  wait(ms){
+   var start = new Date().getTime();
+   var end = start;
+   while(end < start + ms) {
+     end = new Date().getTime();
+  }
+}
 
   formatResults() {
     this.results.forEach(function(result) {
